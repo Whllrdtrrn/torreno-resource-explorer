@@ -3,6 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Custom theme colors */
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --header-bg: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --button-bg: #f3f4f6;
+  --button-hover: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
 }
 
 @theme inline {
@@ -14,13 +26,79 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111827;
+    --foreground: #f9fafb;
+    --card-bg: #1f2937;
+    --card-border: #374151;
+    --header-bg: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --button-bg: #374151;
+    --button-hover: #4b5563;
+    --input-bg: #374151;
+    --input-border: #4b5563;
   }
+}
+
+/* Dark mode overrides */
+html.dark {
+  --background: #111827;
+  --foreground: #f9fafb;
+  --card-bg: #1f2937;
+  --card-border: #374151;
+  --header-bg: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --button-bg: #374151;
+  --button-hover: #4b5563;
+  --input-bg: #374151;
+  --input-border: #4b5563;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom component styles */
+.theme-card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-primary);
+  z-index: 10;
+  position: relative;
+}
+
+.theme-header {
+  background-color: var(--header-bg);
+  border-color: var(--card-border);
+  color: var(--text-primary);
+  z-index: 10;
+  position: relative;
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-button {
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+}
+
+.theme-button:hover {
+  background-color: var(--button-hover);
+}
+
+.theme-input {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-primary);
 }
